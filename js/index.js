@@ -28,7 +28,7 @@ class User {
 }
 
 let user01 = new User(
-    'Agustín',
+    'Agustín Ezequiel',
     'Martearena',
     [
         {titulo: 'El toque de midas', 
