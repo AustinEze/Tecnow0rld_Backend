@@ -47,3 +47,4 @@ let user01 = new User(
 user01.getFullnombre();
 user01.countmascotas();
 user01.getBooknombres();
+
