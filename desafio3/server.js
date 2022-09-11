@@ -16,7 +16,7 @@ const PORT = 8080
 
 const productos = new Contenedor('../desafio2/productos.txt') // Creo un nuevo contenedor con la ruta de productos.txt donde va a guardarse el array
 
-app.get('./productos', (req, res) =>{
+app.get('../desafio2/productos.txt', (req, res) =>{
     res.json(productos.getAll())
 })
 
