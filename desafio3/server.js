@@ -16,8 +16,15 @@ const PORT = 8080
 
 const productos = new Contenedor('../desafio2/productos.txt') // Creo un nuevo contenedor con la ruta de productos.txt donde va a guardarse el array
 
-app.get('../desafio2/productos.txt', (req, res) =>{
-    res.json(productos.getAll())
+app.get('/productos', (req, res) =>{
+    try {
+        const product = productos.leerArchivo()        
+        res.json(product)
+        // console.log(product) // para que puedas ver por la terminal que es lo que contiene prod.
+    }catch (error) {
+        console.error('Error leer archivo: ' + error)
+    }    
+
 })
 
 app.get('/', (req, res) => {
