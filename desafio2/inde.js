@@ -72,11 +72,11 @@ class Contenedor {
          }
         }         
 
-const contenedor = new Contenedor('./desafio2/productos.txt')
+// const contenedor = new Contenedor('./desafio2/productos.txt')
 
-contenedor.save({title: "Video Nvidia Zotac Gaming GeForce RTX 30 Series RTX 3090 ZT-A30900D-10P 24GB", price: 399.999, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_992758-MLA44866145404_022021-O.webp"})
-contenedor.getAll()
-contenedor.getById(4)
+// contenedor.save({title: "Video Nvidia Zotac Gaming GeForce RTX 30 Series RTX 3090 ZT-A30900D-10P 24GB", price: 399.999, thumbnail: "https://http2.mlstatic.com/D_NQ_NP_992758-MLA44866145404_022021-O.webp"})
+// contenedor.getAll()
+// contenedor.getById(4)
 // contenedor.deleteById(4)
 // contenedor.deleteAll()
 module.exports = Contenedor 
