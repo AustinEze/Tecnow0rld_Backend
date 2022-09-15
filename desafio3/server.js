@@ -1,9 +1,9 @@
 const express = require('express');
-const Contenedor = require('../desafio2/inde.js') //Pido el archivo js que tiene el contenedor 
+const Contenedor = require('./index3.js') //Pido el archivo js que tiene el contenedor 
 const app = express();
 const PORT = 8080
 
-const productos = new Contenedor('../desafio2/productos.txt') // Creo un nuevo contenedor con la ruta de productos.txt donde va a guardarse el array
+const productos = new Contenedor('./desafio3/productos.txt') // Creo un nuevo contenedor con la ruta de productos.txt donde va a guardarse el array
 
 app.get('/productos', async (req, res) =>{
     try {
