@@ -1,7 +1,6 @@
-const express = require('express') // llamando a express 
-const filtroID = require('./controlador')
 const router = Router() //uso Router
-const controlador = require('./controlador')
+const express = require('express') // llamando a express 
+const FiltrarPorID = require('./controlador')
 
 const TarjetasGraficas = [
     {
@@ -38,13 +37,12 @@ router.get('/tarjetas', (req, res) => {
 })
 
 
-router.get('/tarjetas/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     let {id} = req.params //Para solicitar id
     let validar = FiltrarPorID(id)
     if(!validar) {
-    //  — Aca pongo eso ya que en tu funcion me retornas un mensaje
+        //  — Aca pongo eso ya que en tu funcion me retornas un mensaje
         res.send(validar) 
-
     } else {
         console.log('Lo sentimos, el id del producto ingresado no existe en nuestra Base de Datos')
     }

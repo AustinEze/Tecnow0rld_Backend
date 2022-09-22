@@ -7,8 +7,6 @@ const ArrayPorID = require('./Tarjetas')
 
 app.use('/tarjetas', graficas)
 
-app.use('/tarjetas/:id', ArrayPorID)
-
 app.use(express.json()) // para que reciba peticiones y las interprete en JSON 
 
 app.get('/', (req, res) => {
