@@ -4,6 +4,8 @@ const { readFile } = require('fs/promises')
 module.exports = class Container {
     constructor(file){
         this.file = file
+        this.products = []
+        this.id = 0
 
         try {
             this.products = fs.readFileSync(this.file, 'utf-8')
@@ -29,9 +31,23 @@ module.exports = class Container {
         }
     }
 
-    addProduct(productAdded){
-        let lastId = this.products[this.products.length-1].id + 1;
-        this.products.push({"id": lastId,"name": productAdded.product, "value": parseInt(productAdded.value)})
+    addProduct(productAdded){         
+
+        const producto = {...productAdded, id: ++this.id}
+        this.products.push(producto)
+        return producto 
+
+        // let products = this.products.id
+
+        // if (products.length == 0) {
+        //     let lastId = this.products[this.products.length-1].id + 1;            
+        //     this.products.push({"id": lastId,"name": productAdded.product, "value": parseInt(productAdded.value)})            
+
+        // } else {
+        //     let lastId = this.products[this.products.length].id + 1;            
+        //     this.products.push({"id": lastId,"name": productAdded.product, "value": parseInt(productAdded.value)})
+        // }
+    
     }
 
     getRandomProduct(){

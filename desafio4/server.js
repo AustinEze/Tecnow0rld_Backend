@@ -8,14 +8,14 @@ const PORT = 8080
 
 //Import de Container.js
 const Container = require('./container.js')
-const productos= new Container ('./productos.json')
+const productos= new Container ('./products.json')
 
 //install body parser to read body on a post
 const bp = require('body-parser')
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 
-router.get("/productos", (req, res) => {
+router.get("api/productos", (req, res) => {
     res.json(productos.getAll())
 } )
 
@@ -27,7 +27,8 @@ router.get("/productos/:id", (req, res) => {
 router.post("/productos", (req, res) => {
     const productsAdd = req.body;
     productos.addProduct(productsAdd)
-    res.status(201).send({status:"saved"})
+    // res.status(201).send({status:"saved"})
+    res.json(productos.getAll())
 } )
 
 router.put("/productos/:id", (req, res) => {
