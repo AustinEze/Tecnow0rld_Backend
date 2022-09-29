@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Placa de video Nvidia MSI Ventus GeForce RTX 30 Series RTX 3090 GEFORCE RTX 3090 VENTUS 3X 24G 24GB",
+    "description": "Resolución máxima: 7680x4320",
+    "price": "344.524",
+    "overview": "https://http2.mlstatic.com/D_NQ_NP_2X_692818-MLA44385884034_122020-F.webp",
+    "id": 0
+  },
+  {
+    "name": "Placa de video Nvidia Evga KO Gaming GeForce RTX 20 Series RTX 2060 06G-P4-2068-KR 6GB",
+    "description": "Resolución máxima: 7680x4320.",
+    "price": "111.248",
+    "overview": "https://http2.mlstatic.com/D_NQ_NP_2X_989904-MLA43401240797_092020-F.webp",
+    "id": 1
+  }
+]

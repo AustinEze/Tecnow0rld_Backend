@@ -1,0 +1,25 @@
+extends layout
+block form
+    h1 New Product
+    section
+        form(action="/api/", method="post")
+            div
+                label(for="name") Nombre
+                br
+                input(type="text", name="name", id="name", required)
+            div
+                label(for="description") Descripción 
+                br
+                input(type="text", name="description", id="description", required)
+            div
+                label(for="price") Precio
+                br
+                input(type="text", name="price", id="price", required)
+            div
+                label(for="overview") Vista previa (Imagen del producto) (URL)
+                br
+                input(type="text", name="overview", id="overview")
+            div
+                input(type="submit", value="Enviar", class="send-btn")
+        div(class="btn-container")
+            a(href="/api/products", class="continue-btn") Productos registrados
