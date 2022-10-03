@@ -11,6 +11,7 @@ app.use('/api/', products);
 app.set('views', './views');
 app.set('view engine', 'pug');
 
+
 app.get('/', (req, res) => {
     res.render('index');
 })
