@@ -1,0 +1,22 @@
+[
+    {
+      "timestamp": "14/10/2022, 21:29:47",
+      "name": "Placa de video Nvidia Evga KO Gaming GeForce RTX 20 Series RTX 2060 06G-P4-2068-KR 6GB",
+      "desc": "GeForce RTX 20 Series RTX 2060 06G-P4-2068-KR 6GB",
+      "code": "77650217",
+      "url": "https://http2.mlstatic.com/D_NQ_NP_2X_989904-MLA43401240797_092020-F.webp",
+      "price": "111.248",
+      "stock": "200",
+      "id": 1
+    },
+    {
+      "timestamp": "14/10/2022, 21:29:48",
+      "name": "Placa de video Nvidia MSI Ventus GeForce RTX 30 Series RTX 3090 GEFORCE RTX 3090 VENTUS 3X 24G 24GB",
+      "desc": "GeForce RTX 30 Series RTX 3090 GEFORCE RTX 3090 VENTUS 3X 24G 24GB",
+      "code": "77650217",
+      "url": "https://http2.mlstatic.com/D_NQ_NP_2X_692818-MLA44385884034_122020-F.webp",
+      "price": "344.524",
+      "stock": "150",
+      "id": 2
+    }
+  ]
