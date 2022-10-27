@@ -52,25 +52,92 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 
+// const express = require('express');
+// const { Server: HttpServer } = require('http')
+// const { Server: IOServer } = require('socket.io') //Importando la dependencia socket.io
+
+// const app = express();
+// const httpServer = new HttpServer(app); 
+// const io = new IOServer(httpServer); //Importando la dependencia socket.io
+
+
+// app.get('/', (req, res) => {
+//     res.send('Hola mundo');
+// })
+
+// httpServer.listen(8080, () => {
+//     console.log('Servidor corriendo en el puerto 8080')
+// })
+
+
 const express = require('express');
-const { Server: HttpServer } = require('http')
-const { Server: IOServer } = require('socket.io') //Importando la dependencia socket.io
-
 const app = express();
-const httpServer = new HttpServer(app); 
-const io = new IOServer(httpServer); //Importando la dependencia socket.io
 
+const notes = [
+    {
+        'id': 1,
+        'nombre': 'Agustín',
+        'estudio': 'Backend'
+    },
+    {
+        'id': 2,
+        'nombre': 'Ezequiel',
+        'estudio': 'JavaScript'
+    },
+    {
+        'id': 3,
+        'nombre': 'Roberto',
+        'estudio': 'NodeJs'
+    }
+]
 
-app.get('/', (req, res) => {
-    res.send('Hola mundo');
+app.get('/', (req, res) =>{
+    res.send('<h1>Hola mundo</h1>')
 })
 
-httpServer.listen(8080, () => {
-    console.log('Servidor corriendo en el puerto 8080')
+app.get('/api/notes', (req, res) =>{
+    res.json(notes)
+})
+
+app.get('/api/notes/:id', (req, res) =>{
+    const id = Number(req.params.id)
+    const noteID = notes.find(notes => notes.id === id)
+
+    if(noteID) {
+        res.json(noteID)
+    } else {
+        res.status(404).end()  //Establezco una respuesta de protocolo web 404 en caso de que no encuentre el ID solicitado.
+    }
+})
+
+app.delete('/api/notes/:id', (req, res) =>{
+    const id = Number(req.params.id) 
+    notes = notes.filter(note => note.id !== id)
+    res.status(204).end()
+})
+
+app.post('/api/notes', (req, res) => {
+    const notes = notes.request.body //Solicito el contenido del array
+    
+    const ids = notes.map(note => note.id) // Recorre el contenido del array existente y nos devuelve el id de cada nota
+    const maxID = Math.max(...ids) // Usamos Math.max  para que nos diga cual es el id máximo actualmente
+
+    const newNote = {
+        id: maxID + 1,
+        nombre: note.nombre,
+        estudio: note.estudio,
+    }
+
+    notes = [...note, newNote]
+    
+    res.json(console.log(newNote)) 
+
 })
 
 
-
-
+const PORT = 8080;
+app.listen (PORT, () =>{
+    console.log(`Servidor abierto en: http://localhost:${PORT}`)
+})
 
 
