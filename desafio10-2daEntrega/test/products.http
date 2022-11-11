@@ -1,0 +1,39 @@
+### Rest client VSextension test
+
+####################
+###   PRODUCTS   ###
+####################
+
+### GET ALL PRODUCTS
+GET http://localhost:8081/api/products/ HTTP/1.1
+
+### GET PRODUCT BY ID
+GET http://localhost:8081/api/products/i7CK3PkDghLYV6UjFRVL HTTP/1.1
+
+### DELETE PRODUCT BY ID
+DELETE http://localhost:8081/api/products/CXRQyHlxjbQ0FvcZKHee HTTP/1.1
+Authorization: admin
+
+### POST ADD PRODUCT
+POST http://localhost:8081/api/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: admin
+
+{
+    "name": "Placa de video Nvidia Evga KO Gaming GeForce RTX 20 Series RTX 2060 06G-P4-2068-KR 6GB",
+    "desc": "RTX 20 Series RTX 2060 06G-P4-2068-KR 6GB",
+    "code": "77650217",
+    "url": "https://http2.mlstatic.com/D_NQ_NP_2X_989904-MLA43401240797_092020-F.webp",
+    "price": "111.248",
+    "stock": "210"
+}
+
+### PUT UPDATE PRODUCT
+PUT http://localhost:8081/api/products/i7CK3PkDghLYV6UjFRVL HTTP/1.1
+Content-Type: application/json
+Authorization: admin
+
+{
+    "name": "Tolkien Deluxe Edition",
+    "stock": "984"
+}
